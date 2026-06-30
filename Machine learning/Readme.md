@@ -64,27 +64,33 @@ The goal of cross-validation isn't to build your final model. The goal is to eva
 ### Checklist
 
 * **Linear Models**
-* [ ] Linear Regression
+* [ ] Linear Regression 
+  * https://machinelearningmastery.com/linear-regression-for-machine-learning/
 * [ ] Logistic Regression
+  * https://christophm.github.io/interpretable-ml-book/logistic.html
 
 
 * **Tree-Based Models**
 * [ ] Decision Trees
+  * https://medium.com/@abhishekjainindore24/all-about-decision-trees-80ea55e37fef
 * [ ] Random Forest
 * [ ] XGBoost / LightGBM / CatBoost
 
 
 * **Clustering**
 * [ ] K-Means
+  * https://medium.com/@laakhanbukkawar/understanding-k-means-and-k-means-a-comprehensive-guide-4b288a6bf218
 * [ ] DBSCAN
+  * https://medium.com/@kaleemullahyounas123/dbscan-another-clustering-algorithm-for-machine-learning-89885f555a2e
 * [ ] Hierarchical Clustering
 
 
 * **Dimensionality Reduction**
 * [ ] PCA
+  * https://www.youtube.com/watch?v=FgakZw6K1QQ
 * [ ] t-SNE
 * [ ] UMAP
-
+  * https://pair-code.github.io/understanding-umap/
 
 * **Neural Networks**
 * [ ] MLP
