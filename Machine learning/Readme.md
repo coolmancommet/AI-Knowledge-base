@@ -109,6 +109,6 @@ The goal of cross-validation isn't to build your final model. The goal is to eva
 ### ❓ Must-Know Interview Questions
 
 1. What is the fundamental difference between Bagging (Random Forest) and Boosting (XGBoost)?
-2. Walk me through the math of Logistic Regression. What is the output strictly representing?
+2. Walk me through the math of Logistic Regression. What is the output strictly representing?https://medium.com/analytics-vidhya/the-math-behind-logistic-regression-c2f04ca27bca
 3. Why does K-Means struggle with non-spherical clusters, and how does DBSCAN solve this?
 4. In PCA, what are eigenvalues and eigenvectors, and what do they represent physically in the data?
