@@ -2,9 +2,9 @@
 
 ### Core Mechanics
 
-* **Forward Propagation:** Computing predictions via weights, biases, and activations.
-* **Backpropagation:** The chain rule in action to compute gradients.
-* **Gradient Descent:** Updating weights to minimize the loss function.
+* **Forward Propagation:** Computing predictions via weights, biases, and activations. [link MEDIUM](https://medium.com/gen-ai-adventures/what-is-forward-propagation-in-neural-networks-588882607a80)
+* **Backpropagation:** The chain rule in action to compute gradients.[link TDS](https://towardsdatascience.com/neural-networks-forward-pass-and-backpropagation-be3b75a1cfcc/)
+* **Gradient Descent:** Updating weights to minimize the loss function.[for learning rate and GD ](https://medium.com/@juanc.olamendy/gradient-descent-in-deep-learning-a-complete-guide-with-pytorch-and-keras-examples-e2127a7d072a)
 * **Vanishing & Exploding Gradients [Added - Expanded]:** You must know *why* they happen (compounded matrix multiplications) and how things like **gradient clipping** and proper **weight initialization** (Xavier/He, **[Added]**) fix them.
 
 ### Optimizers & Regularization
@@ -12,7 +12,7 @@
 * **Optimizers:**
 * **SGD:** Stochastic Gradient Descent.
 * **Adam:** Adaptive Moment Estimation (tracks first and second moments).
-* **AdamW:** Adam with decoupled weight decay (crucial for Transformers; know why standard Adam + L2 regularization fails here).
+* **AdamW:** Adam with decoupled weight decay (crucial for Transformers; know why standard Adam + L2 regularization fails here).l
 
 
 * **Activation Functions:** ReLU, GELU (standard in modern LLMs), Sigmoid. Know the dead ReLU problem.
