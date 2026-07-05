@@ -6,20 +6,21 @@
 * **Backpropagation:** The chain rule in action to compute gradients.[link TDS](https://towardsdatascience.com/neural-networks-forward-pass-and-backpropagation-be3b75a1cfcc/)
 * **Gradient Descent:** Updating weights to minimize the loss function.[for learning rate and GD ](https://medium.com/@juanc.olamendy/gradient-descent-in-deep-learning-a-complete-guide-with-pytorch-and-keras-examples-e2127a7d072a)
 * **Vanishing & Exploding Gradients [Added - Expanded]:** You must know *why* they happen (compounded matrix multiplications) and how things like **gradient clipping** and proper **weight initialization** (Xavier/He, **[Added]**) fix them.
+  (gradient and not weights. gradient is the delta to weights.) [medium link](https://kishanakbari.medium.com/understanding-vanishing-and-exploding-gradients-in-neural-networks-a-deep-dive-with-examples-ca9284863d50)
 
 ### Optimizers & Regularization
 
-* **Optimizers:**
-* **SGD:** Stochastic Gradient Descent.
-* **Adam:** Adaptive Moment Estimation (tracks first and second moments).
-* **AdamW:** Adam with decoupled weight decay (crucial for Transformers; know why standard Adam + L2 regularization fails here).l
+* **Optimizers:** [optimizerss core and why they are needed](https://towardsdatascience.com/neural-network-optimizers-made-simple-core-algorithms-and-why-they-are-needed-7fd072cd2788/) , [differential and adaptive learning rates optimizers](https://towardsdatascience.com/differential-and-adaptive-learning-rates-neural-network-optimizers-and-schedulers-demystified-2edc589fa2c9/)
+* **SGD:** Stochastic Gradient Descent.[SGD](https://towardsdatascience.com/stochastic-gradient-descent-math-and-python-code-35b5e66d6f79/)
+* **Adam:** Adaptive Moment Estimation (tracks first and second moments). [adam](https://towardsdatascience.com/the-math-behind-adam-optimizer-c41407efe59b/)
+* **AdamW:** Adam with decoupled weight decay (crucial for Transformers; know why standard Adam + L2 regularization fails here).[ adam W vs adam ](https://yassin01.medium.com/adam-vs-adamw-understanding-weight-decay-and-its-impact-on-model-performance-b7414f0af8a1)
 
 
-* **Activation Functions:** ReLU, GELU (standard in modern LLMs), Sigmoid. Know the dead ReLU problem.
-* **Normalization & Regularization:**
+* **Activation Functions:** ReLU, GELU (standard in modern LLMs), Sigmoid. Know the dead ReLU problem. [RELu GELU SILU](https://freedium-mirror.cfd/https://pub.towardsai.net/activation-functions-in-focus-understanding-relu-gelu-and-silu-841ed1c6df0c)
+* **Normalization & Regularization:** [fast learing regularization](https://medium.com/@dewasheesh.rana/normalizat-2294d50bde56)
 * **Dropout:** Randomly deactivating neurons during training.
-* **BatchNorm:** Normalizing across the batch dimension. Know the difference between training (using batch stats) vs. inference (using running averages).
-* **LayerNorm [Added]:** Normalizing across the feature dimension. **Crucial note:** Transformers use LayerNorm, *not* BatchNorm, because batch sizes vary and NLP sequences have dynamic lengths.
+* **BatchNorm:** Normalizing across the batch dimension. Know the difference between training (using batch stats) vs. inference (using running averages).[batch Norm](https://towardsdatascience.com/batch-norm-explained-visually-how-it-works-and-why-neural-networks-need-it-b18919692739/) beta and gamma for scaling and shifting varience to a specific value 
+* **LayerNorm [Added]:** Normalizing across the feature dimension. **Crucial note:** Transformers use LayerNorm, *not* BatchNorm, because batch sizes vary and NLP sequences have dynamic lengths.[ nice example of understanding the LN and BN](https://outcomeschool.com/blog/batch-normalization-vs-layer-normalization)
 
 
 
@@ -27,8 +28,13 @@
 
 ## 2. The Transformer Architecture
 
-### Core Components
+* [The concept of attention](https://machinelearningmastery.com/what-is-attention/)
+* [The attention mechanism](https://machinelearningmastery.com/the-attention-mechanism-from-scratch/)
+* [The Bahdanau attention mechanism](https://machinelearningmastery.com/?p=12940&preview=true)
+* [The Luong attention mechanism](https://machinelearningmastery.com/the-luong-attention-mechanism/)
 
+### Core Components [visual representation](https://medium.com/@gokulrajar/attention-mechanism-math-illustration-transformers-series-part-1-37c24ac9d2f2)
+[detailed explanation](https://jalammar.github.io/illustrated-transformer/)
 * **Self-Attention & Multi-Head Attention:** Mapping queries ($Q$), keys ($K$), and values ($V$). Multi-head allows the model to attend to information from different representation subspaces simultaneously.
 * **The Attention Formula:**
 
