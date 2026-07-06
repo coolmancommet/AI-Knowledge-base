@@ -23,11 +23,11 @@ time series data  non stationarity how to handle and how can we detect it.
 
 **Original Topics:** QKV vectors, positional encoding, pre/post-normalization, BERT evaluation, RAG reranking.
 
-* **Attention Mechanisms:** In the Transformer architecture, why do we project inputs into separate Query, Key, and Value (QKV) vectors? What limitations would arise if we used a single representation vector instead of three, or expanded it to more than three?
+* **Attention Mechanisms:** In the Transformer architecture, why do we project inputs into separate Query, Key, and Value (QKV) vectors? What limitations would arise if we used a single representation vector instead of three, or expanded it to more than three?[answer](https://medium.com/@nkk18072004/understanding-queries-keys-and-values-in-transformers-149ed07c9f8b#:~:text=This%20is,symmetric)
 * **Positional Encoding:** Explain the mathematical intuition behind sinusoidal positional encodings in the original Transformer. How do modern alternatives like Rotary Positional Embeddings (RoPE) or ALiBi improve upon this, particularly for extrapolating to longer context windows?
 * **Architecture Stability:** Contrast **Pre-Layer Normalization** (Pre-LN) with **Post-Layer Normalization** (Post-LN) in Transformers. How do they fundamentally impact gradient flow, loss landscape, and training stability at scale?
 * **Evaluation Strategies:** If you were tasked with pre-training a BERT-style encoder model from scratch, how would you evaluate its convergence and general linguistic understanding before fine-tuning it on downstream tasks?
-* **RAG Architecture:** In a Retrieval-Augmented Generation (RAG) pipeline, what is the specific role of a reranker (e.g., a Cross-Encoder)? Why not simply return the top-K results directly from the vector database's initial bi-encoder similarity search?
+* **RAG Architecture:** In a Retrieval-Augmented Generation (RAG) pipeline, what is the specific role of a reranker (e.g., a Cross-Encoder)? Why not simply return the top-K results directly from the vector database's initial bi-encoder similarity search? [more on rag](https://medium.com/@yu-joshua/rag-is-more-than-retrieval-its-search-judge-9f8e0364fe5b)
 * **[New] Generative AI Optimization:** Explain the concept of KV-Cache in autoregressive generation. How do techniques like PagedAttention or Multi-Query Attention (MQA) address the memory bandwidth bottlenecks associated with it?
 * **[New] Parameter-Efficient Fine-Tuning (PEFT):** Mathematically, how does Low-Rank Adaptation (LoRA) reduce the number of trainable parameters? Why does initializing matrix $B$ to zero and matrix $A$ to a Gaussian distribution guarantee that the initial forward pass remains unchanged?
 
