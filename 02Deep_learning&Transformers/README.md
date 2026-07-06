@@ -44,7 +44,7 @@ $$Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 * *Interview Must-Know:* We scale by $\sqrt{d_k}$ because for large dimensions, the dot products grow large in magnitude, pushing the softmax function into regions with extremely small gradients (causing vanishing gradients during backprop).
 
 
-* **Positional Encoding:** Injecting sequence order since attention is permutation-invariant. Know the difference between absolute (Sinusoidal) and **Relative/Rotary Embeddings (RoPE) [Added]** used in modern LLMs like Llama.
+* **Positional Encoding:** Injecting sequence order since attention is permutation-invariant. Know the difference between absolute (Sinusoidal) and **Relative/Rotary Embeddings (RoPE) [Added]** used in modern LLMs like Llama. [deep dive in positional encoding](https://medium.com/thedeephub/positional-encoding-explained-a-deep-dive-into-transformer-pe-65cfe8cfe10b)
 * **Encoder vs. Decoder:**
 * **Encoder:** Bidirectional context (e.g., BERT).
 * **Decoder:** Autoregressive, uses **Causal Masking [Added]** to prevent looking at future tokens (e.g., GPT).
@@ -54,7 +54,7 @@ $$Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 ### Why Transformers Beat RNNs
 
-1. **Parallel Processing:** RNNs must process sequentially (step-by-step); Transformers process the entire sequence at once during training.
+1. **Parallel Processing:** RNNs must process sequentially (step-by-step); Transformers process the entire sequence at once during training.n 0
 2. **Better Long-Range Dependency Handling:** Attention provides a direct path between any two tokens, bypassing the fading memory of RNN paths.
 3. **Scalable Training:** Enables training massive datasets on hardware clusters efficiently.
 
@@ -112,7 +112,7 @@ Standard self-attention forces every single token to look at every other token. 
 
 * **RMSNorm (Root Mean Square Normalization):** A faster alternative to LayerNorm. It skips calculating the mean of the features and only calculates the variance, saving about 10% to 50% of normalization computation time with zero loss in accuracy.
 * **SwiGLU Activation:** Modern LLMs have largely abandoned standard GELU for SwiGLU. It is a gated activation function that improves learning capacity, though it requires slightly more parameters per layer.
-* **Mixture of Experts (MoE):** Instead of passing a token through one giant Feed-Forward Network (FFN), an MoE layer contains multiple smaller "expert" networks. A router network sends each token to only 1 or 2 experts. This allows a model to have 100B+ total parameters but only use a fraction of them per token (e.g., Mixtral, GPT-4), making inference incredibly fast.
+* **Mixture of Experts (MoE): [for understanding MOE](https://youtu.be/0QQlYR1r6pQ)** Instead of passing a token through one giant Feed-Forward Network (FFN), an MoE layer contains multiple smaller "expert" networks. A router network sends each token to only 1 or 2 experts. This allows a model to have 100B+ total parameters but only use a fraction of them per token (e.g., Mixtral, GPT-4), making inference incredibly fast.
 
 ---
 
@@ -139,4 +139,4 @@ Interviewers love testing your understanding of how models actually run in produ
 
 ---
 
-To get a concrete visual breakdown of how the memory demands of these models scale at the matrix level in production, check out this guide on [Understanding the KV Cache Bottleneck](https://www.youtube.com/watch?v=CxRGWfcGVbs). It breaks down exactly why inference systems struggle with long sequences from a system-infrastructure perspective.
+To get a concrete visual breakdown of how the memory demands of these models scale at the matrix level in production, check out this guide on [Understanding the KV Cache Bottleneck](https://www.youtube.com/watch?v=CxRGWfcGVbs). It breaks down exactly why inference systems struggle with long sequences from a system-infrastructure perspective. [better visualization KV cache](https://www.youtube.com/watch?v=8nD5DeNGNHU)
